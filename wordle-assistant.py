@@ -44,7 +44,7 @@ fifth_letter_entry = ttk.Entry(mainframe, width = 3, textvariable = fifth_letter
 fifth_letter_entry.grid(column = 5, row = 1, sticky = (W, E))
 
 suggested_guess = StringVar()
-ttk.Label(mainframe, textvariable = suggested_guess).grid(column = 2, row = 2, sticky = (W, E))
+ttk.Label(mainframe, textvariable = suggested_guess).grid(column = 6, row = 4, sticky = (W, E))
 
 ttk.Button(mainframe, text = "Analyse", command = analyse).grid(column = 6, row = 3, sticky = W)
 
