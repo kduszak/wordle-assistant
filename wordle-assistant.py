@@ -1,5 +1,6 @@
 import pandas as pd
 from tkinter import *
+import tkinter as tk
 from tkinter import ttk
 
 # Saving csv file as pandas dataFrame
@@ -16,6 +17,9 @@ def charLimiter(box_contents):
         return True
     else:
         return False
+    
+def change_button_colour(button):
+    button.config(bg = "red")
 
 root = Tk()
 root.title("Wordle Assistant")
@@ -42,6 +46,21 @@ fourth_letter_entry.grid(column = 4, row = 1, sticky = (W, E))
 fifth_letter = StringVar()
 fifth_letter_entry = ttk.Entry(mainframe, width = 3, textvariable = fifth_letter, validate = "key", validatecommand = (charLimiter_call, '%P'))
 fifth_letter_entry.grid(column = 5, row = 1, sticky = (W, E))
+
+first_letter_button = tk.Button(mainframe, command = lambda: change_button_colour(first_letter_button))
+first_letter_button.grid(column = 1, row = 2, sticky = W)
+
+second_letter_button = tk.Button(mainframe, command = lambda: change_button_colour(second_letter_button))
+second_letter_button.grid(column = 2, row = 2, sticky = W)
+
+third_letter_button = tk.Button(mainframe, command = lambda: change_button_colour(third_letter_button))
+third_letter_button.grid(column = 3, row = 2, sticky = W)
+
+fourth_letter_button = tk.Button(mainframe, command = lambda: change_button_colour(fourth_letter_button))
+fourth_letter_button.grid(column = 4, row = 2, sticky = W)
+
+fifth_letter_button = tk.Button(mainframe, command = lambda: change_button_colour(fifth_letter_button))
+fifth_letter_button.grid(column = 5, row = 2, sticky = W)
 
 suggested_guess = StringVar()
 ttk.Label(mainframe, textvariable = suggested_guess).grid(column = 6, row = 4, sticky = (W, E))
