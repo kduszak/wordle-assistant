@@ -48,19 +48,19 @@ fifth_letter_entry = ttk.Entry(mainframe, width = 3, textvariable = fifth_letter
 fifth_letter_entry.grid(column = 5, row = 1, sticky = (W, E))
 
 first_letter_button = tk.Button(mainframe, command = lambda: change_button_colour(first_letter_button))
-first_letter_button.grid(column = 1, row = 2, sticky = W)
+first_letter_button.grid(column = 1, row = 2, sticky = EW)
 
 second_letter_button = tk.Button(mainframe, command = lambda: change_button_colour(second_letter_button))
-second_letter_button.grid(column = 2, row = 2, sticky = W)
+second_letter_button.grid(column = 2, row = 2, sticky = EW)
 
 third_letter_button = tk.Button(mainframe, command = lambda: change_button_colour(third_letter_button))
-third_letter_button.grid(column = 3, row = 2, sticky = W)
+third_letter_button.grid(column = 3, row = 2, sticky = EW)
 
 fourth_letter_button = tk.Button(mainframe, command = lambda: change_button_colour(fourth_letter_button))
-fourth_letter_button.grid(column = 4, row = 2, sticky = W)
+fourth_letter_button.grid(column = 4, row = 2, sticky = EW)
 
 fifth_letter_button = tk.Button(mainframe, command = lambda: change_button_colour(fifth_letter_button))
-fifth_letter_button.grid(column = 5, row = 2, sticky = W)
+fifth_letter_button.grid(column = 5, row = 2, sticky = EW)
 
 suggested_guess = StringVar()
 ttk.Label(mainframe, textvariable = suggested_guess).grid(column = 6, row = 4, sticky = (W, E))
