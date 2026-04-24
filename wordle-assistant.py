@@ -18,8 +18,16 @@ def charLimiter(box_contents):
     else:
         return False
     
+colours = {0:"gray", 1:"yellow", 2:"green"}
+
+def coloursLookup(target):
+    for k in colours:
+        if colours[k] == target:
+            return k
+        
 def change_button_colour(button):
-    button.config(bg = "red")
+    new_colour = colours[(coloursLookup(button.cget("bg")) + 1)%3]
+    button.config(bg = new_colour)
 
 root = Tk()
 root.title("Wordle Assistant")
@@ -47,19 +55,19 @@ fifth_letter = StringVar()
 fifth_letter_entry = ttk.Entry(mainframe, width = 3, textvariable = fifth_letter, validate = "key", validatecommand = (charLimiter_call, '%P'))
 fifth_letter_entry.grid(column = 5, row = 1, sticky = (W, E))
 
-first_letter_button = tk.Button(mainframe, command = lambda: change_button_colour(first_letter_button))
+first_letter_button = tk.Button(mainframe, bg = "gray", command = lambda: change_button_colour(first_letter_button))
 first_letter_button.grid(column = 1, row = 2, sticky = EW)
 
-second_letter_button = tk.Button(mainframe, command = lambda: change_button_colour(second_letter_button))
+second_letter_button = tk.Button(mainframe, bg = "gray", command = lambda: change_button_colour(second_letter_button))
 second_letter_button.grid(column = 2, row = 2, sticky = EW)
 
-third_letter_button = tk.Button(mainframe, command = lambda: change_button_colour(third_letter_button))
+third_letter_button = tk.Button(mainframe, bg = "gray", command = lambda: change_button_colour(third_letter_button))
 third_letter_button.grid(column = 3, row = 2, sticky = EW)
 
-fourth_letter_button = tk.Button(mainframe, command = lambda: change_button_colour(fourth_letter_button))
+fourth_letter_button = tk.Button(mainframe, bg = "gray", command = lambda: change_button_colour(fourth_letter_button))
 fourth_letter_button.grid(column = 4, row = 2, sticky = EW)
 
-fifth_letter_button = tk.Button(mainframe, command = lambda: change_button_colour(fifth_letter_button))
+fifth_letter_button = tk.Button(mainframe, bg = "gray", command = lambda: change_button_colour(fifth_letter_button))
 fifth_letter_button.grid(column = 5, row = 2, sticky = EW)
 
 suggested_guess = StringVar()
