@@ -8,6 +8,9 @@ from tkinter import ttk
 
 def analyse(*args):
     try:
+        #for x in range(5):
+            #print(letters[x].get())
+            #print(buttons[x].cget("bg"))
         suggested_guess.set("OKAPI")
     except ValueError:
         pass
@@ -54,6 +57,7 @@ fourth_letter_entry.grid(column = 4, row = 1, sticky = (W, E))
 fifth_letter = StringVar()
 fifth_letter_entry = ttk.Entry(mainframe, width = 3, textvariable = fifth_letter, validate = "key", validatecommand = (charLimiter_call, '%P'))
 fifth_letter_entry.grid(column = 5, row = 1, sticky = (W, E))
+letters = (first_letter, second_letter, third_letter, fourth_letter, fifth_letter)
 
 first_letter_button = tk.Button(mainframe, bg = "gray", command = lambda: change_button_colour(first_letter_button))
 first_letter_button.grid(column = 1, row = 2, sticky = EW)
@@ -69,6 +73,7 @@ fourth_letter_button.grid(column = 4, row = 2, sticky = EW)
 
 fifth_letter_button = tk.Button(mainframe, bg = "gray", command = lambda: change_button_colour(fifth_letter_button))
 fifth_letter_button.grid(column = 5, row = 2, sticky = EW)
+buttons = (first_letter_button, second_letter_button, third_letter_button, fourth_letter_button, fifth_letter_button)
 
 suggested_guess = StringVar()
 ttk.Label(mainframe, textvariable = suggested_guess).grid(column = 6, row = 4, sticky = (W, E))
